@@ -1,19 +1,15 @@
 package model;
 
-import controller.NavButtonClicked;
-import controller.Rotateable;
+
+import utils.GameConstants;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Created by Сергей on 07.09.2018.
  */
 public class StartPanel extends JPanel {
-    private final int WIDTH = (int) (ScreenSize.getWidthApp() / 2);
 
     private Image img;
 
@@ -120,9 +116,8 @@ public class StartPanel extends JPanel {
 
 
     public void paintComponent(Graphics g) {
-        g.drawImage(img, 0, 0, (int) (WIDTH), (int) (WIDTH * 1.5), null);
+        g.drawImage(img, 0, 0, (int) (GameConstants.WIDTH), (int) (GameConstants.WIDTH * 1.5), null);
 
-        repaint();
 //        g.drawImage(imgStartButton, 60, 200, (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
 //        g.drawImage(imgExitButton, (int) (ScreenSize.getWidthApp()/3-20), (int) (ScreenSize.getWidthApp()/3*1.5), (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
 //        g.drawImage(imgInfoButton, (int) (ScreenSize.getWidthApp()/3), 30, (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);

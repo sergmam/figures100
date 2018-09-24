@@ -1,44 +1,25 @@
 package view;
 
- import com.eclipsesource.json.Json;
- import com.google.gson.Gson;
- import com.google.gson.JsonElement;
- import com.google.gson.JsonObject;
- import com.google.gson.JsonPrimitive;
- import com.google.gson.internal.LinkedTreeMap;
- import com.google.gson.reflect.TypeToken;
- import com.google.gson.stream.JsonReader;
  import controller.NavButtonClicked;
  import model.*;
- import org.codehaus.jackson.map.ObjectMapper;
- import org.codehaus.jackson.map.type.MapType;
- import org.codehaus.jackson.type.TypeReference;
- import org.json.simple.JSONArray;
- import org.json.simple.JSONObject;
- import org.json.simple.parser.JSONParser;
- import org.junit.Test;
  import utils.GameConstants;
 
-import javax.swing.*;
- import java.awt.*;
+ import javax.swing.*;
  import java.awt.event.MouseAdapter;
  import java.awt.event.MouseEvent;
- import java.io.File;
- import java.io.FileReader;
  import java.io.IOException;
- import java.io.InputStream;
- import java.util.*;
+
 
 /**
  * Created by Сергей on 07.09.2018.
  */
-public class GameScreen extends JFrame implements GameConstants, ScreenSize {
+public class GameScreen extends JFrame implements GameConstants{
 
     GameScreen() throws IOException {
         super("100 Figures");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        setSize((int) ScreenSize.getWidthApp()/2, (int) ((ScreenSize.getWidthApp() /2) * 1.5));
+        setSize((int) GameConstants.WIDTH, (int) (GameConstants.WIDTH * 1.5));
         setLocationRelativeTo(null);
         setUndecorated(true);
         setResizable(false);

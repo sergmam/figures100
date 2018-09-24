@@ -1,5 +1,7 @@
 package model;
 
+import utils.GameConstants;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +9,6 @@ import java.awt.*;
  * Created by Сергей on 23.09.2018.
  */
 public class LevelsPanel extends JPanel {
-    private final int WIDTH = (int) (ScreenSize.getWidthApp() / 2);
 
     private Image img;
 
@@ -36,16 +37,16 @@ public class LevelsPanel extends JPanel {
 //        panel.add(button,1,0);
 //        panel.add(button,2,0);
         ImageIcon imageIcon = new ImageIcon("src/main/resources/4259.jpg");
-        for(int i=1; i<38;i++){
+        for(int i=1; i<18;i++){
             String sI= String.valueOf(i);
             JLabel label =new JLabel(imageIcon);
-            label.setEnabled(false);
+//            label.setEnabled(false);
             panel.add(label);
 
         }
         panel.add(exitButton);
-        panel.setBounds(10,10,WIDTH - 20, (int) (WIDTH*1.5)-20);
-        totalPan.setBounds(10,10,WIDTH - 20, (int) (WIDTH*1.5)-20);
+        panel.setBounds(10,10, GameConstants.WIDTH - 20, (int) (GameConstants.WIDTH*1.5)-20);
+        totalPan.setBounds(10,10,GameConstants.WIDTH - 20, (int) (GameConstants.WIDTH*1.5)-20);
 
         panel.setOpaque(false);
         totalPan.setOpaque(false);
@@ -61,7 +62,7 @@ public class LevelsPanel extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        g.drawImage(img, 0, 0, (int) (WIDTH), (int) (WIDTH * 1.5), null);
+        g.drawImage(img, 0, 0, (int) (GameConstants.WIDTH), (int) (GameConstants.WIDTH * 1.5), null);
 
 //        g.drawImage(imgStartButton, 60, 200, (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
 //        g.drawImage(imgExitButton, (int) (ScreenSize.getWidthApp()/3-20), (int) (ScreenSize.getWidthApp()/3*1.5), (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
