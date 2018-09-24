@@ -19,7 +19,7 @@ public class GameScreen extends JFrame implements GameConstants{
         super("100 Figures");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        setSize((int) GameConstants.WIDTH, (int) (GameConstants.WIDTH * 1.5));
+        setSize(GameConstants.WIDTH, (int) (GameConstants.WIDTH * 1.5));
         setLocationRelativeTo(null);
         setUndecorated(true);
         setResizable(false);
@@ -28,7 +28,6 @@ public class GameScreen extends JFrame implements GameConstants{
         jLayeredPane.setOpaque(false);
 
         StartPanel startPanel = new StartPanel();
-
 
         jLayeredPane.add(startPanel, JLayeredPane.DEFAULT_LAYER);
         jLayeredPane.addMouseListener(new MouseAdapter() {
@@ -42,6 +41,10 @@ public class GameScreen extends JFrame implements GameConstants{
                         jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
                         break;
                     case "exit":
+                        System.out.println("Click Exit");
+                        System.exit(0);
+                        break;
+                    case "exitSmall":
                         System.out.println("Click Exit");
                         System.exit(0);
                         break;

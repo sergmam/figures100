@@ -14,49 +14,28 @@ public class LevelsPanel extends JPanel {
 
     public LevelsPanel() {
         this.img = new ImageIcon("src/main/resources/grass.jpg").getImage();
-//        this.imgStartButton = new ImageIcon("src/main/resources/startButtonWood.png").getImage();
-//        this.imgExitButton = new ImageIcon("src/main/resources/exitButtonWood.png").getImage();
-//        this.imgInfoButton = new ImageIcon("src/main/resources/infoButtonWood.png").getImage();
-//        this.imgNewButton = new ImageIcon("src/main/resources/newButtonWood.png").getImage();
-        Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-//        setPreferredSize(size);
-//        setMinimumSize(size);
-//        setMaximumSize(size);
-        setSize(size);
-        setLayout(null);
-        NavigateButton exitButton = new NavigateButton("exitButton");
 
-        JPanel totalPan = new JPanel(new BorderLayout());
+        setLayout(null);
+
+
+        NavigateButton exitButton = new NavigateButton("exitButtonSmall");
+
         JPanel panel = new JPanel();
 
-
-        panel.setLayout(new GridLayout(8,6,10,10));
-        JButton button;
-//        button.getPreferredSize();
-//        panel.add(button,0,0);
-//        panel.add(button,1,0);
-//        panel.add(button,2,0);
-        ImageIcon imageIcon = new ImageIcon("src/main/resources/4259.jpg");
-        for(int i=1; i<18;i++){
-            String sI= String.valueOf(i);
-            JLabel label =new JLabel(imageIcon);
-//            label.setEnabled(false);
+        panel.setLayout(new GridLayout(6, 0, 10, 10));
+        for (int i = 0; i < 40; i++) {
+            String sI = String.valueOf(i);
+            JLabel label = new JLabel();
+            label.setText(sI);
             panel.add(label);
-
         }
-        panel.add(exitButton);
-        panel.setBounds(10,10, GameConstants.WIDTH - 20, (int) (GameConstants.WIDTH*1.5)-20);
-        totalPan.setBounds(10,10,GameConstants.WIDTH - 20, (int) (GameConstants.WIDTH*1.5)-20);
-
         panel.setOpaque(false);
-        totalPan.setOpaque(false);
-//        add(exitButton);
-        totalPan.add(panel,BorderLayout.CENTER);
-//        totalPan.add(exitButton,BorderLayout.SOUTH);
-        add(totalPan);
-
+        panel.setBounds(10,10,GameConstants.WIDTH-20,400);
+//        setLayout(new BorderLayout(10,10));
+        add(panel);
+        add(exitButton);
+        setSize(GameConstants.WIDTH, (int) (GameConstants.WIDTH * 1.5));
         setOpaque(true);
-        setSize(getWidth(), getHeight());
         setVisible(true);
 
     }

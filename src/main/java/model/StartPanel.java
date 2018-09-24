@@ -30,7 +30,6 @@ public class StartPanel extends JPanel {
         setSize(getWidth(), getHeight());
         setVisible(true);
 
-
 //        Figure triangle0 = new Figure((Rotateable.getCoord(Figure.X_COORD.get("Triangle"),
 //                Figure.Y_COORD.get("Triangle"), Math.PI).get("x")),
 //                (Rotateable.getCoord(Figure.X_COORD.get("Triangle"),
@@ -122,7 +121,6 @@ public class StartPanel extends JPanel {
 //        g.drawImage(imgExitButton, (int) (ScreenSize.getWidthApp()/3-20), (int) (ScreenSize.getWidthApp()/3*1.5), (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
 //        g.drawImage(imgInfoButton, (int) (ScreenSize.getWidthApp()/3), 30, (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
 //        g.drawImage(imgNewButton, 10, 30, (int) (ScreenSize.getWidthApp()/2), (int) (ScreenSize.getWidthApp()/2*1.5), null);
-
 
     }
 

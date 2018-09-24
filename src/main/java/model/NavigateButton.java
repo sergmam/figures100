@@ -39,6 +39,13 @@ public class NavigateButton extends JComponent{
                 this.width = WIDTH;
                 this.height = (int) (WIDTH * 1.5);
                 break;
+            case "exitButtonSmall":
+                this.img = new ImageIcon(PATH_IMG + "exitButtonSmall.png").getImage();
+                this.x = (int) (WIDTH / 2.5);
+                this.y = (int) (WIDTH/1.55);
+                this.width = WIDTH;
+                this.height = (int) (WIDTH * 1.5);
+                break;
             case "infoButton":
                 this.img = new ImageIcon(PATH_IMG + "infoButtonWood.png").getImage();
                 this.x = (WIDTH / 3);
