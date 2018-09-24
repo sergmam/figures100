@@ -45,7 +45,7 @@ public class GameScreen extends JFrame implements GameConstants{
                         System.exit(0);
                         break;
                     case "exitSmall":
-                        System.out.println("Click Exit");
+                        System.out.println("Click ExitSmall");
                         System.exit(0);
                         break;
                     case "new":

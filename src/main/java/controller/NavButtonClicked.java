@@ -18,7 +18,7 @@ public interface NavButtonClicked {
         } else if ((x > WIDTH - WIDTH / 3 && x < WIDTH - WIDTH / 6) &&
                 (y > 1.25*WIDTH   && y < 1.45*WIDTH  )) {
             nameBut = "exit";
-        } else if ((x > WIDTH/1.28 && x < WIDTH /1.1) &&
+        } else if ((x > WIDTH/1.28 && x < WIDTH ) &&
                 (y > 1.25*WIDTH   && y < 1.43*WIDTH  )) {
             nameBut = "exitSmall";
 //            System.out.println("Click EXIT");
