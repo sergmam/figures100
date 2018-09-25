@@ -1,1 +1,12 @@
-{"names":"gffgfgf"}
+{
+  "names": [
+    {
+      "id": 1,
+      "playerName": "New Player"
+    },
+    {
+      "id": 5,
+      "playerName": "New 5xxx"
+    }
+  ]
+}
