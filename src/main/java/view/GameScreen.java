@@ -1,13 +1,21 @@
 package view;
 
+ import com.google.gson.JsonArray;
+ import controller.FindPlayerName;
  import controller.NavButtonClicked;
  import model.*;
+ import org.codehaus.jackson.map.ObjectMapper;
  import utils.GameConstants;
 
  import javax.swing.*;
  import java.awt.event.MouseAdapter;
  import java.awt.event.MouseEvent;
+ import java.io.File;
  import java.io.IOException;
+ import java.util.ArrayList;
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
 
 
 /**
@@ -40,6 +48,7 @@ public class GameScreen extends JFrame implements GameConstants{
                     switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
                         case "start":
                             System.out.println("Click Start");
+                            FindPlayerName.playerName();
                             startPanel.setVisible(false);
                             levelsPanel = new LevelsPanel();
                             levelsPanel.setActivated(true);
@@ -52,6 +61,17 @@ public class GameScreen extends JFrame implements GameConstants{
                             break;
                         case "new":
                             System.out.println("Click New");
+                            Map<String,String> playersName = new HashMap<String, String>() {{
+                                put("names",new String("gffgfgf"));
+                            }
+                            };
+
+                            ObjectMapper mapper = new ObjectMapper();
+                            try {
+                                mapper.writeValue(new File(PATH_TO_JSON + "playersName.json"), playersName);
+                            } catch (IOException e1) {
+                                e1.printStackTrace();
+                            }
                             break;
                         case "info":
                             System.out.println("Click Info");
