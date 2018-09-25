@@ -11,6 +11,15 @@ import java.awt.*;
 public class LevelsPanel extends JPanel {
 
     private Image img;
+    private boolean isActivated = false;
+
+    public boolean isActivated() {
+        return isActivated;
+    }
+
+    public void setActivated(boolean activated) {
+        isActivated = activated;
+    }
 
     public LevelsPanel() {
         this.img = new ImageIcon("src/main/resources/grass.jpg").getImage();

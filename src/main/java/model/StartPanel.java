@@ -12,6 +12,15 @@ import java.awt.*;
 public class StartPanel extends JPanel {
 
     private Image img;
+    private boolean isActivated = false;
+
+    public boolean isActivated() {
+        return isActivated;
+    }
+
+    public void setActivated(boolean activated) {
+        isActivated = activated;
+    }
 
     public StartPanel() {
         this.img = new ImageIcon("src/main/resources/dry_leaf.jpg").getImage();
@@ -29,6 +38,7 @@ public class StartPanel extends JPanel {
         setOpaque(true);
         setSize(getWidth(), getHeight());
         setVisible(true);
+
 
 //        Figure triangle0 = new Figure((Rotateable.getCoord(Figure.X_COORD.get("Triangle"),
 //                Figure.Y_COORD.get("Triangle"), Math.PI).get("x")),

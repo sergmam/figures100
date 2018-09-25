@@ -14,6 +14,8 @@ package view;
  * Created by Сергей on 07.09.2018.
  */
 public class GameScreen extends JFrame implements GameConstants{
+    StartPanel startPanel;
+    LevelsPanel levelsPanel;
 
     GameScreen() throws IOException {
         super("100 Figures");
@@ -27,33 +29,43 @@ public class GameScreen extends JFrame implements GameConstants{
         JComponent jLayeredPane = getLayeredPane();
         jLayeredPane.setOpaque(false);
 
-        StartPanel startPanel = new StartPanel();
+        startPanel = new StartPanel();
+        startPanel.setActivated(true);
 
         jLayeredPane.add(startPanel, JLayeredPane.DEFAULT_LAYER);
         jLayeredPane.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
-                    case "start":
-                        System.out.println("Click Start");
-                        startPanel.setVisible(false);
-                        LevelsPanel levelsPanel = new LevelsPanel();
-                        jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
-                        break;
-                    case "exit":
-                        System.out.println("Click Exit");
-                        System.exit(0);
-                        break;
-                    case "exitSmall":
-                        System.out.println("Click ExitSmall");
-                        System.exit(0);
-                        break;
-                    case "new":
-                        System.out.println("Click New");
-                        break;
-                    case "info":
-                        System.out.println("Click Info");
-                        break;
+                if(startPanel.isActivated()) {
+                    switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
+                        case "start":
+                            System.out.println("Click Start");
+                            startPanel.setVisible(false);
+                            levelsPanel = new LevelsPanel();
+                            levelsPanel.setActivated(true);
+                            startPanel.setActivated(false);
+                            jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
+                            break;
+                        case "exit":
+                            System.out.println("Click Exit");
+                            System.exit(0);
+                            break;
+                        case "new":
+                            System.out.println("Click New");
+                            break;
+                        case "info":
+                            System.out.println("Click Info");
+                            break;
+                    }
+                }
+                if(levelsPanel.isActivated()) {
+                    switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
+                        case "exitSmall":
+                            System.out.println("Click ExitSmall");
+                            System.exit(0);
+                            levelsPanel.setActivated(false);
+                            break;
+                    }
                 }
             }
         });
