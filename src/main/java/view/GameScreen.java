@@ -2,18 +2,14 @@ package view;
 
 import controller.FindPlayerName;
 import controller.NavButtonClicked;
-import controller.NewPlayer;
+import controller.ParserPlayers;
 import model.*;
-import org.codehaus.jackson.map.ObjectMapper;
 import utils.GameConstants;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**
@@ -46,7 +42,8 @@ public class GameScreen extends JFrame implements GameConstants {
                     switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
                         case "start":
                             System.out.println("Click Start");
-                            FindPlayerName.findPlayerName();
+//                            FindPlayerName.findPlayerName();
+                            ParserPlayers parserPlayers = new ParserPlayers();
                             startPanel.setVisible(false);
                             levelsPanel = new LevelsPanel();
                             levelsPanel.setActivated(true);
@@ -59,7 +56,8 @@ public class GameScreen extends JFrame implements GameConstants {
                             break;
                         case "new":
                             System.out.println("Click New");
-                            NewPlayer newPlayer = new NewPlayer();
+                            PlayerDialog playerDialog = new PlayerDialog();
+                            playerDialog.show();
                             break;
                         case "info":
                             System.out.println("Click Info");

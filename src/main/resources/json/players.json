@@ -1,0 +1,10 @@
+{
+  "players": [
+    {
+      "playerID": 1,
+      "playerName": "New Player",
+      "countPassedLevels": 0,
+      "passedLevels": [0]
+    }
+  ]
+}

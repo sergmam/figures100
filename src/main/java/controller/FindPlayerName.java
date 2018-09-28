@@ -20,30 +20,30 @@ public interface FindPlayerName {
         List<String> names = new ArrayList<>();
         Gson gson = new Gson();
         BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(PATH_TO_JSON + "playersName.json"));
-            Result result = gson.fromJson(br, Result.class);
-            System.out.println(result);
-            if (result != null) {
-                for (Todo t : result.getNames()) {
-                    System.out.println(t.getId() + " - " + t.getPlayerName());
-                    names.add(t.getPlayerName());
-
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-
-        }
+//        try {
+//            br = new BufferedReader(new FileReader(PATH_TO_JSON + "playersName.json"));
+//            Result result = gson.fromJson(br, Result.class);
+//            System.out.println(result);
+//            if (result != null) {
+//                for (Todo t : result.getNames()) {
+//                    System.out.println(t.getId() + " - " + t.getPlayerName());
+//                    names.add(t.getPlayerName());
+//
+//                }
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (br != null) {
+//                try {
+//                    br.close();
+//                } catch (IOException e) {
+//                    // TODO Auto-generated catch block
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//        }
         return names;
     }
 }
