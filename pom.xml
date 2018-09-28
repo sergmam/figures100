@@ -25,7 +25,7 @@
                 <version>0.4.1</version>
                 <configuration>
                     <sourceDirectory>src/main/resources/json</sourceDirectory>
-                    <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                    <outputDirectory>src/main/utils</outputDirectory>
                     <targetPackage>ru.qatools.json2pojo.beans</targetPackage>
                     <annotationStyle>gson</annotationStyle>
                     <sourceType>json</sourceType>
