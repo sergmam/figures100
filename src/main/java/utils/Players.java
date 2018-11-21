@@ -21,8 +21,12 @@ public class Players {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+
     }
 
+    public void addPlayer(Player player) {
+        players.add(players.size(), player);
+    }
     public Players withPlayers(List<Player> players) {
         this.players = players;
         return this;

@@ -3,10 +3,12 @@ package view;
 import controller.FindPlayerName;
 import controller.NavButtonClicked;
 import controller.ParserPlayers;
+import controller.SavePlayers;
 import model.*;
 import utils.GameConstants;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -44,6 +46,7 @@ public class GameScreen extends JFrame implements GameConstants {
                             System.out.println("Click Start");
 //                            FindPlayerName.findPlayerName();
                             ParserPlayers parserPlayers = new ParserPlayers();
+                            System.out.println(parserPlayers.getPlayerName());
                             startPanel.setVisible(false);
                             levelsPanel = new LevelsPanel();
                             levelsPanel.setActivated(true);
@@ -58,6 +61,9 @@ public class GameScreen extends JFrame implements GameConstants {
                             System.out.println("Click New");
                             PlayerDialog playerDialog = new PlayerDialog();
                             playerDialog.show();
+                            String newPlayer = playerDialog.getInputName();
+                            System.out.println("NewPlayer from Scanner" + newPlayer);
+                            SavePlayers sp = new SavePlayers(newPlayer);
                             break;
                         case "info":
                             System.out.println("Click Info");

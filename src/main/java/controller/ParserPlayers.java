@@ -16,6 +16,8 @@ import static utils.GameConstants.PATH_TO_JSON;
  */
 public class ParserPlayers {
 
+    private int playerID;
+    private String playerName;
     public ParserPlayers() {
         Gson gson = new Gson();
         BufferedReader br = null;
@@ -29,6 +31,8 @@ public class ParserPlayers {
                             + " - " + p.getPlayerName()
                             + " - " + p.getCountPassedLevels()
                             + " - " + p.getPassedLevels());
+                    this.playerID = p.getPlayerID();
+                    this.playerName = p.getPlayerName();
                 }
             }
         } catch (FileNotFoundException e) {
@@ -43,5 +47,21 @@ public class ParserPlayers {
                 }
             }
         }
+    }
+
+    public int getPlayerID() {
+        return playerID;
+    }
+
+    public void setPlayerID(int playerID) {
+        this.playerID = playerID;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }

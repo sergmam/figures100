@@ -14,4 +14,5 @@ public interface GameConstants {
     final double ANGLE = Math.PI/4;
 
     final String PATH_TO_JSON = "src/main/resources/json/";
+    final String PATH_TO_RES = "src/main/resources/";
 }

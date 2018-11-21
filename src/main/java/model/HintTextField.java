@@ -47,7 +47,7 @@ public class HintTextField extends JTextField implements FocusListener {
         }
     }
 
-    public String getText()
+    public  String getText()
     {
         String typed = super.getText();
         return typed.equals(hint)?"":typed;
