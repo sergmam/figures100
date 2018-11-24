@@ -9,7 +9,42 @@
     },
     {
       "playerID": 2,
-      "playerName": "model.HintTextField[,0,19,242x20,invalid,layout\u003djavax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX\u003d0.0,alignmentY\u003d0.0,border\u003djavax.swing.plaf.BorderUIResource$CompoundBorderUIResource@261b9177,flags\u003d296,maximumSize\u003d,minimumSize\u003d,preferredSize\u003d,caretColor\u003dsun.swing.PrintColorUIResource[r\u003d51,g\u003d51,b\u003d51],disabledTextColor\u003djavax.swing.plaf.ColorUIResource[r\u003d184,g\u003d207,b\u003d229],editable\u003dtrue,margin\u003djavax.swing.plaf.InsetsUIResource[top\u003d0,left\u003d0,bottom\u003d0,right\u003d0],selectedTextColor\u003dsun.swing.PrintColorUIResource[r\u003d51,g\u003d51,b\u003d51],selectionColor\u003djavax.swing.plaf.ColorUIResource[r\u003d184,g\u003d207,b\u003d229],columns\u003d0,columnWidth\u003d0,command\u003d,horizontalAlignment\u003dLEADING]",
+      "playerName": "Вася",
+      "passedLevels": [
+        0
+      ]
+    },
+    {
+      "playerID": 3,
+      "playerName": "Василий",
+      "passedLevels": [
+        0
+      ]
+    },
+    {
+      "playerID": 4,
+      "playerName": "Dfdfzcv",
+      "passedLevels": [
+        0
+      ]
+    },
+    {
+      "playerID": 5,
+      "playerName": "KKKK",
+      "passedLevels": [
+        0
+      ]
+    },
+    {
+      "playerID": 6,
+      "playerName": "MMM",
+      "passedLevels": [
+        0
+      ]
+    },
+    {
+      "playerID": 7,
+      "playerName": "VVV",
       "passedLevels": [
         0
       ]

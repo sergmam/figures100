@@ -20,6 +20,7 @@ import java.io.IOException;
 public class GameScreen extends JFrame implements GameConstants {
     StartPanel startPanel;
     LevelsPanel levelsPanel;
+    boolean isPlay = false;
 
     GameScreen() throws IOException {
         super("100 Figures");
@@ -47,11 +48,7 @@ public class GameScreen extends JFrame implements GameConstants {
 //                            FindPlayerName.findPlayerName();
                             ParserPlayers parserPlayers = new ParserPlayers();
                             System.out.println(parserPlayers.getPlayerName());
-                            startPanel.setVisible(false);
-                            levelsPanel = new LevelsPanel();
-                            levelsPanel.setActivated(true);
-                            startPanel.setActivated(false);
-                            jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
+                            isPlay = true;
                             break;
                         case "exit":
                             System.out.println("Click Exit");
@@ -59,17 +56,24 @@ public class GameScreen extends JFrame implements GameConstants {
                             break;
                         case "new":
                             System.out.println("Click New");
-                            PlayerDialog playerDialog = new PlayerDialog();
-                            playerDialog.show();
-                            String newPlayer = playerDialog.getInputName();
-                            System.out.println("NewPlayer from Scanner" + newPlayer);
+                            String newPlayer = new PlayerDialog().getInputName();
+                            System.out.println("NewPlayer from Scanner " + newPlayer);
                             SavePlayers sp = new SavePlayers(newPlayer);
+                            isPlay = true;
                             break;
                         case "info":
                             System.out.println("Click Info");
                             break;
                     }
                 }
+                if (isPlay) {
+                    startPanel.setVisible(false);
+                    levelsPanel = new LevelsPanel();
+                    levelsPanel.setActivated(true);
+                    startPanel.setActivated(false);
+                    jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
+                }
+                System.out.println("levelsPanel.isActivated() " +levelsPanel.isActivated());
                 if (levelsPanel.isActivated()) {
                     switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
                         case "exitSmall":
