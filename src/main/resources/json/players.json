@@ -2,49 +2,7 @@
   "players": [
     {
       "playerID": 1,
-      "playerName": "New player 1 from SavePlayers",
-      "passedLevels": [
-        0
-      ]
-    },
-    {
-      "playerID": 2,
       "playerName": "Вася",
-      "passedLevels": [
-        0
-      ]
-    },
-    {
-      "playerID": 3,
-      "playerName": "Василий",
-      "passedLevels": [
-        0
-      ]
-    },
-    {
-      "playerID": 4,
-      "playerName": "Dfdfzcv",
-      "passedLevels": [
-        0
-      ]
-    },
-    {
-      "playerID": 5,
-      "playerName": "KKKK",
-      "passedLevels": [
-        0
-      ]
-    },
-    {
-      "playerID": 6,
-      "playerName": "MMM",
-      "passedLevels": [
-        0
-      ]
-    },
-    {
-      "playerID": 7,
-      "playerName": "VVV",
       "passedLevels": [
         0
       ]
