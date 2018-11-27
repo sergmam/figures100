@@ -15,7 +15,6 @@ import java.util.ArrayList;
  */
 public class PanelPlayers extends JPanel {
 
-    StartPanel startPanel;
     LabelPlayerName labelPlayerName;
     private ArrayList<JLabel> labelList;
     private JLabel[] jLabelArr;
@@ -30,7 +29,6 @@ public class PanelPlayers extends JPanel {
         setOpaque(true);
         setSize(getWidth(), getHeight());
         setVisible(true);
-
 
         JPanel listPanel = new JPanel();
         listPanel.setOpaque(true);
@@ -48,7 +46,6 @@ public class PanelPlayers extends JPanel {
 
         JLabel list = new JLabel("List of players   ");
         //list.setIcon(new ImageIcon("src/main/resources/selectIcon.png"));
-
         list.setBorder(BorderFactory.createMatteBorder(
                 1, 5, 1, 5, Color.GREEN.darker().darker()));
         list.setFont(new Font("Serif", Font.BOLD, 20));
@@ -77,7 +74,7 @@ public class PanelPlayers extends JPanel {
             jLabelArr[i].addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
-                    for (int j = 0; j < 4; j++) {
+                    for (int j = 0; j < parserPlayers.getListNames().size(); j++) {
                         jLabelArr[j].setForeground(Color.BLUE);
                     }
                 }
@@ -102,12 +99,10 @@ public class PanelPlayers extends JPanel {
                 setEnabled(false);
             }
         });
-
         add(listPanel);
     }
 
     public void paintComponent(Graphics g) {
-        g.drawImage(img, 0, 0,   (GameConstants.WIDTH), (int) (GameConstants.WIDTH * 1.5), null);
+        g.drawImage(img, 0, 0, (GameConstants.WIDTH), (int) (GameConstants.WIDTH * 1.5), null);
     }
-
 }

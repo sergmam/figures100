@@ -36,7 +36,6 @@ public class PlayerDialog {
 
         setOptions(new String[]{"OK", "Cancel"});
         setOptionSelection(0);
-
     }
 
     public void setTitle(String title) {
@@ -50,7 +49,6 @@ public class PlayerDialog {
     public void addComponent(JComponent component) {
         components.add(component);
     }
-
 
     public void addMessageText(String messageText) {
         JLabel label = new JLabel("<html>" + messageText + "</html>");
@@ -95,14 +93,6 @@ public class PlayerDialog {
         return "<br>";
     }
 
-//    public int getOptionIndex() {
-//        return optionIndex;
-//    }
-//
-//    public void setOptionIndex(int optionIndex) {
-//        this.optionIndex = optionIndex;
-//    }
-
     public String getInputName() {
 
         UIManager UI = new UIManager();
@@ -111,12 +101,11 @@ public class PlayerDialog {
 
         String name = JOptionPane.showInputDialog(rootPane, components.toArray(), title, messageType);
 
-       // System.out.println("PlayerDialog " + name);
-        if ( name == null) {
-             JOptionPane.showMessageDialog(rootPane, "You didn't enter name!");
+        // System.out.println("PlayerDialog " + name);
+        if (name == null) {
+            JOptionPane.showMessageDialog(rootPane, "You didn't enter name!");
             return null;
         }
         return name;
     }
-
 }

@@ -46,7 +46,7 @@ public class GameScreen extends JFrame implements GameConstants {
                             panelPlayers = new PanelPlayers();
                             panelPlayers.setEnabled(true);
                             jLayeredPane.add(panelPlayers, JLayeredPane.DRAG_LAYER);
-                            isPlay = false;
+                            isPlay = true;
                             break;
                         case "exit":
                             System.out.println("Click Exit");
@@ -66,7 +66,6 @@ public class GameScreen extends JFrame implements GameConstants {
                             System.out.println("Click Info");
                             break;
                     }
-
                 }
                 if (isPlay) {
                     startPanel.setVisible(false);
@@ -76,18 +75,17 @@ public class GameScreen extends JFrame implements GameConstants {
                     jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
                 }
 //                System.out.println("levelsPanel.isActivated() " +levelsPanel.isActivated());
-//                if (levelsPanel.isActivated()) {
-//                    switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
-//                        case "exitSmall":
-//                            System.out.println("Click ExitSmall");
-//                            System.exit(0);
-//                            levelsPanel.setActivated(false);
-//                            break;
-//                    }
-//                }
+                if (levelsPanel.isActivated()) {
+                    switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
+                        case "exitSmall":
+                            System.out.println("Click ExitSmall");
+                            System.exit(0);
+                            levelsPanel.setActivated(false);
+                            break;
+                    }
+                }
             }
         });
-
 
 //        ObjectMapper mapper = new ObjectMapper();
 //
@@ -135,7 +133,6 @@ public class GameScreen extends JFrame implements GameConstants {
 //        }
         setVisible(true);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     }
 
     public static void main(String[] args) throws Exception {

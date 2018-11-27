@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 /**
  * Created by Сергей on 22.09.2018.
  */
-public class NavigateButton extends JComponent{
+public class NavigateButton extends JComponent {
     private String nameButton;
     private Image img;
     private int x, y, width, height;
@@ -26,24 +26,22 @@ public class NavigateButton extends JComponent{
             case "startButton":
                 this.img = new ImageIcon(PATH_IMG + "startButtonWood.png").getImage();
                 this.x = 10;
-                this.y = WIDTH/3;
-                System.out.println(WIDTH);
+                this.y = WIDTH / 3;
+//                System.out.println(WIDTH);
                 this.width = WIDTH;
                 this.height = (int) (WIDTH * 1.5);
-
-//                label.setIcon((Icon) img);
                 break;
             case "exitButton":
                 this.img = new ImageIcon(PATH_IMG + "exitButtonWood.png").getImage();
-                this.x =  (WIDTH / 3);
-                this.y = (int) (WIDTH/1.7);
+                this.x = (WIDTH / 3);
+                this.y = (int) (WIDTH / 1.7);
                 this.width = WIDTH;
                 this.height = (int) (WIDTH * 1.5);
                 break;
             case "exitButtonSmall":
                 this.img = new ImageIcon(PATH_IMG + "exitButtonSmall.png").getImage();
                 this.x = (int) (WIDTH / 2.5);
-                this.y = (int) (WIDTH/1.55);
+                this.y = (int) (WIDTH / 1.55);
                 this.width = WIDTH;
                 this.height = (int) (WIDTH * 1.5);
                 break;
@@ -57,21 +55,19 @@ public class NavigateButton extends JComponent{
             case "newGameButton":
                 this.img = new ImageIcon(PATH_IMG + "newButtonWood.png").getImage();
                 this.x = 5;
-                this.y = WIDTH/5;
+                this.y = WIDTH / 5;
                 this.width = WIDTH;
                 this.height = (int) (WIDTH * 1.5);
         }
-        label.setBounds(0,0,img.getWidth(this)/10,
-                img.getHeight(this)/10);
+        label.setBounds(0, 0, img.getWidth(this) / 10,
+                img.getHeight(this) / 10);
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
                 System.out.println(getName());
             }
         });
     }
-
 
     public String getNameButton() {
         return nameButton;
@@ -102,7 +98,6 @@ public class NavigateButton extends JComponent{
     }
 
     public void paintComponent(Graphics g) {
-
-        g.drawImage( img, getX(), getY(),label.getWidth(), label.getHeight(), this);
+        g.drawImage(img, getX(), getY(), label.getWidth(), label.getHeight(), this);
     }
 }
