@@ -1,14 +1,11 @@
 package view;
 
-import controller.FindPlayerName;
 import controller.NavButtonClicked;
-import controller.ParserPlayers;
 import controller.SavePlayers;
 import model.*;
 import utils.GameConstants;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -21,6 +18,7 @@ public class GameScreen extends JFrame implements GameConstants {
     StartPanel startPanel;
     LevelsPanel levelsPanel;
     boolean isPlay = false;
+    PanelPlayers panelPlayers;
 
     GameScreen() throws IOException {
         super("100 Figures");
@@ -41,14 +39,14 @@ public class GameScreen extends JFrame implements GameConstants {
         jLayeredPane.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (startPanel.isActivated()) {
+                if (startPanel.isEnabled()) {
                     switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
                         case "start":
                             System.out.println("Click Start");
-//                            FindPlayerName.findPlayerName();
-                            ParserPlayers parserPlayers = new ParserPlayers();
-                            System.out.println(parserPlayers.getPlayerName());
-                            isPlay = true;
+                            panelPlayers = new PanelPlayers();
+                            panelPlayers.setEnabled(true);
+                            jLayeredPane.add(panelPlayers, JLayeredPane.DRAG_LAYER);
+                            isPlay = false;
                             break;
                         case "exit":
                             System.out.println("Click Exit");
@@ -57,14 +55,18 @@ public class GameScreen extends JFrame implements GameConstants {
                         case "new":
                             System.out.println("Click New");
                             String newPlayer = new PlayerDialog().getInputName();
-                            System.out.println("NewPlayer from Scanner " + newPlayer);
-                            SavePlayers sp = new SavePlayers(newPlayer);
-                            isPlay = true;
+                            if (newPlayer != null) {
+                                SavePlayers sp = new SavePlayers(newPlayer);
+                                isPlay = true;
+                            } else {
+                                isPlay = false;
+                            }
                             break;
                         case "info":
                             System.out.println("Click Info");
                             break;
                     }
+
                 }
                 if (isPlay) {
                     startPanel.setVisible(false);
@@ -73,18 +75,19 @@ public class GameScreen extends JFrame implements GameConstants {
                     startPanel.setActivated(false);
                     jLayeredPane.add(levelsPanel, JLayeredPane.DEFAULT_LAYER);
                 }
-                System.out.println("levelsPanel.isActivated() " +levelsPanel.isActivated());
-                if (levelsPanel.isActivated()) {
-                    switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
-                        case "exitSmall":
-                            System.out.println("Click ExitSmall");
-                            System.exit(0);
-                            levelsPanel.setActivated(false);
-                            break;
-                    }
-                }
+//                System.out.println("levelsPanel.isActivated() " +levelsPanel.isActivated());
+//                if (levelsPanel.isActivated()) {
+//                    switch (NavButtonClicked.getNameBut(e.getX(), e.getY())) {
+//                        case "exitSmall":
+//                            System.out.println("Click ExitSmall");
+//                            System.exit(0);
+//                            levelsPanel.setActivated(false);
+//                            break;
+//                    }
+//                }
             }
         });
+
 
 //        ObjectMapper mapper = new ObjectMapper();
 //
@@ -132,6 +135,7 @@ public class GameScreen extends JFrame implements GameConstants {
 //        }
         setVisible(true);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     }
 
     public static void main(String[] args) throws Exception {

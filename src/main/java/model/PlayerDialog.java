@@ -111,7 +111,11 @@ public class PlayerDialog {
 
         String name = JOptionPane.showInputDialog(rootPane, components.toArray(), title, messageType);
 
-        System.out.println("PlayerDialog " + name);
+       // System.out.println("PlayerDialog " + name);
+        if ( name == null) {
+             JOptionPane.showMessageDialog(rootPane, "You didn't enter name!");
+            return null;
+        }
         return name;
     }
 

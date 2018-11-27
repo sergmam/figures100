@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static utils.GameConstants.PATH_TO_JSON;
 
@@ -18,6 +20,11 @@ public class ParserPlayers {
 
     private int playerID;
     private String playerName;
+    private List<String> names = new ArrayList<>();
+    private int currentPlayerID;
+    private String currentPlayername;
+    private int passedLevelsCurrentPlayer;
+
     public ParserPlayers() {
         Gson gson = new Gson();
         BufferedReader br = null;
@@ -27,12 +34,9 @@ public class ParserPlayers {
             Players players = gson.fromJson(br, Players.class);
             if (players != null) {
                 for (Player p : players.getPlayers()) {
-                    System.out.println(p.getPlayerID()
-                            + " - " + p.getPlayerName()
-                            + " - " + p.getCountPassedLevels()
-                            + " - " + p.getPassedLevels());
                     this.playerID = p.getPlayerID();
                     this.playerName = p.getPlayerName();
+                    this.names.add(p.getPlayerName());
                 }
             }
         } catch (FileNotFoundException e) {
@@ -61,7 +65,43 @@ public class ParserPlayers {
         return playerName;
     }
 
+    public List<String> getListNames() {
+        return names;
+    }
+
+    public String[] getPlayersName() {
+        String[] playersName = new String[names.size()];
+        for (int i = 0; i < names.size(); i++) {
+            playersName[i] = names.get(i);
+//            System.out.println("getPlayersName - " + playersName[i]);
+        }
+        return playersName;
+    }
+
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
+    }
+
+    public Player getCurrentPlayer(String name) {
+        Player curPlayer = null;
+        Gson gsonCur = new Gson();
+        BufferedReader brCur = null;
+        try {
+            brCur = new BufferedReader(new FileReader(PATH_TO_JSON
+                    + "players.json"));
+            Players players = gsonCur.fromJson(brCur, Players.class);
+            if (players != null) {
+                for (Player p : players.getPlayers()) {
+                    this.playerID = p.getPlayerID();
+                    this.playerName = p.getPlayerName();
+                    if (("Player: " + playerName).equals(name)) {
+                        curPlayer = p;
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return curPlayer;
     }
 }

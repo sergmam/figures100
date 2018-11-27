@@ -12,7 +12,7 @@ import java.awt.*;
 public class StartPanel extends JPanel {
 
     private Image img;
-    private boolean isActivated = false;
+    private boolean isActivated;
 
     public boolean isActivated() {
         return isActivated;
@@ -80,6 +80,17 @@ public class StartPanel extends JPanel {
         NavigateButton newBut = new NavigateButton("newGameButton");
         NavigateButton infoBut = new NavigateButton("infoButton");
         NavigateButton exitButton = new NavigateButton("exitButton");
+//        if (isActivated) {
+//            startBut.setEnable(true);
+//            newBut.setEnable(true);
+//            infoBut.setEnable(true);
+//            exitButton.setEnable(true);
+//        } else {
+//            startBut.setEnable(false);
+//            newBut.setEnable(false);
+//            infoBut.setEnable(false);
+//            exitButton.setEnable(false);
+//        }
 //        JLabel label = new JLabel();
 //        label.setBounds(0, 0, 400, 600);
 //        label.add(startBut);

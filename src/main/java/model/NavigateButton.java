@@ -17,6 +17,7 @@ public class NavigateButton extends JComponent{
     private final String PATH_IMG = "src/main/resources/";
     Image dimg;
     JLabel label = new JLabel();
+
     NavigateButton(String nameButton) {
         super();
         this.nameButton = nameButton;

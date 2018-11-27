@@ -6,6 +6,20 @@
       "passedLevels": [
         0
       ]
+    },
+    {
+      "playerID": 2,
+      "playerName": "BBBBB",
+      "passedLevels": [
+        0
+      ]
+    },
+    {
+      "playerID": 3,
+      "playerName": "ZZZ",
+      "passedLevels": [
+        0
+      ]
     }
   ]
 }
